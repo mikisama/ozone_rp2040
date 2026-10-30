@@ -10,6 +10,20 @@ This project customizes the following Ozone hooks to ensure reliable downloading
 - `AfterTargetReset()`
 - `_SetupTarget()`
 
+## Build & Debug
+
+### 1. FLASH Build
+Build the firmware to execute from Flash and launch Ozone:
+```bash
+cmake -GNinja -Bbuild -DPICO_NO_FLASH=OFF && cmake --build build && ozone app.jdebug
+```
+
+### 2. RAM (NO_FLASH) Build
+Build the firmware to execute directly from SRAM (`0x20000000`) and launch Ozone:
+```bash
+cmake -GNinja -Bbuild -DPICO_NO_FLASH=ON && cmake --build build && ozone app.jdebug
+```
+
 ## Hook Implementations
 
 ### `TargetDownload()`

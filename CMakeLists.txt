@@ -49,6 +49,5 @@ pico_add_extra_outputs(hello_serial)
 
 # my project config
 target_compile_options(hello_serial PUBLIC -gdwarf-2)
-# pico_set_binary_type(hello_serial no_flash)
 pico_enable_stdio_uart(hello_serial 0)
 pico_enable_stdio_rtt(hello_serial 1)
